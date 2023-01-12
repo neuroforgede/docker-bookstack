@@ -2,7 +2,7 @@
 
 Forked from https://github.com/solidnerd/docker-bookstack with more frequent updates.
 
-## Current Version: [22.07.02](https://github.com/neuroforgede/docker-bookstack/blob/master/Dockerfile)
+## Current Version: [22.11.1](https://github.com/neuroforgede/docker-bookstack/blob/master/Dockerfile)
 
 ### Changes
 
@@ -49,8 +49,13 @@ mysql:5.7.21
 ```bash
 docker run -d --link bookstack_db_:mysql \
 -p 8080:8080 \
+<<<<<<< HEAD
 --name bookstack_22.04.02 \
 neuroforgede/bookstack:22.04.02
+=======
+--name bookstack_22.11.0 \
+solidnerd/bookstack:22.11.0
+>>>>>>> solidnerd/master
 ```
 
 #### Docker 1.9+
@@ -83,8 +88,13 @@ docker run -d --net bookstack_nw \
 -e DB_PASSWORD=secret \
 -e APP_URL=http://example.com \
 -p 8080:8080 \
+<<<<<<< HEAD
 --name="bookstack_22.07.02" \
  neuroforgede/bookstack:22.07.02
+=======
+--name="bookstack_22.11.0" \
+ solidnerd/bookstack:22.11.0
+>>>>>>> solidnerd/master
 ```
 
 The APP_URL parameter should be the base URL for your BookStack instance without a trailing slash. For example:
