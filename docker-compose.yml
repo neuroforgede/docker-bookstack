@@ -11,7 +11,7 @@ services:
     - mysql-data:/var/lib/mysql
 
   bookstack:
-    image: neuroforgede/bookstack
+    image: ghcr.io/neuroforgede/docker-bookstack:23.1.1
     depends_on:
     - mysql
     environment:

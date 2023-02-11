@@ -3,7 +3,7 @@ on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
-      - '*' # Push events to matching v*, i.e. v1.0, v0.4.4
+      - '*' # Push on all tag events
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build and push Dev
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile
@@ -71,8 +71,10 @@ jobs:
       id: docker_meta
       uses: docker/metadata-action@v4
       with:
-        images: solidnerd/bookstack,ghcr.io/solidnerd/docker-bookstack
-        tags:
+        images: |
+          solidnerd/bookstack
+          ghcr.io/solidnerd/docker-bookstack
+        tags: |
           type=semver,pattern={{version}}
           type=semver,pattern={{major}}.{{minor}}
           type=semver,pattern={{major}}.{{minor}}.{{patch}}
@@ -109,7 +111,7 @@ jobs:
         password: ${{ secrets.CR_PAT }}
 
     - name: Build and Push master
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         file: ./Dockerfile
