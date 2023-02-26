@@ -2,7 +2,7 @@
 
 Forked from https://github.com/solidnerd/docker-bookstack with more frequent updates.
 
-## Current Version: [23.1.1](https://github.com/neuroforgede/docker-bookstack/blob/master/Dockerfile)
+## Current Version: [23.02.0](https://github.com/neuroforgede/docker-bookstack/blob/master/Dockerfile)
 
 ### Changes
 
@@ -58,8 +58,8 @@ neuroforgede/bookstack:22.04.02
 solidnerd/bookstack:22.11.0
 >>>>>>> solidnerd/master
 =======
---name bookstack_23.1.1 \
-solidnerd/bookstack:23.1.1
+--name bookstack_23.02.0 \
+solidnerd/bookstack:23.02.0
 >>>>>>> solidnerd/master
 ```
 
@@ -93,18 +93,8 @@ docker run -d --net bookstack_nw \
 -e DB_PASSWORD=secret \
 -e APP_URL=http://example.com \
 -p 8080:8080 \
-<<<<<<< HEAD
-<<<<<<< HEAD
---name="bookstack_22.07.02" \
- neuroforgede/bookstack:22.07.02
-=======
---name="bookstack_22.11.0" \
- solidnerd/bookstack:22.11.0
->>>>>>> solidnerd/master
-=======
---name="bookstack_23.1.1" \
- solidnerd/bookstack:23.1.1
->>>>>>> solidnerd/master
+--name="bookstack_23.02.0" \
+ neuroforgede/bookstack:23.02.0
 ```
 
 The APP_URL parameter should be the base URL for your BookStack instance without a trailing slash. For example:
