@@ -27,6 +27,8 @@ RUN set -x; \
         curl \
         libzip-dev \
         unzip \
+        python3 \
+        python3-pip \
     && wget -O wkhtmltox.deb https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.bookworm_amd64.deb \
     && chmod a+x ./wkhtmltox.deb \
     && apt-get install -y ./wkhtmltox.deb \
